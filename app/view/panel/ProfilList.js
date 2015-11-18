@@ -8,14 +8,9 @@ Ext.define('Kds.view.panel.ProfilList', {
         'Ext.grid.RowNumberer'
     ],
 
-   
 
-    store: {
-        type: 'profil'
-    },
-    columnLines: true,
+   // columnLines: true,
     forceFit: true,
-    //width : 600,
     plugins: [{
         ptype: 'rowexpander',
         rowBodyTpl : new Ext.XTemplate(
@@ -27,66 +22,85 @@ Ext.define('Kds.view.panel.ProfilList', {
     
         })
     }],
-        /*dockedItems: [{
-            xtype: 'pagingtoolbar',
-            
-            store: {
-                type: 'profil'
-            },
-            dock: 'bottom',
-            displayInfo: true
-        }],*/
 
 
 
 initComponent: function () {
 
+var store = Ext.create('Kds.store.Profil');
 
-        this.columns = [{
-                xtype: 'rownumberer',
+        Ext.apply(this, {
+            store: store,
 
-            }, {
+
+            // grid columns
+            columns:[{
+
+                xtype: 'rownumberer'
+            },{
                 text     : 'Nama',
                 locked   : true,
-                width    : 230,
+                width    : 300,
                 sortable : true,
                 dataIndex: 'name'
             }, {
                 text     : 'No Kad Pengenalan',
-                lockable: false,
-                width    : 100,
+                flex: 1,
+                minWidth: 130,
                 sortable : true,
+                locked   : false,
                 dataIndex: 'ic_no'
-            },{
-                text     : 'Tarikh Lahir',
-                lockable: false,
-                width    : 100,
+            },
+            {
+                text     : 'Warganegara',
+                flex: 1,
+                minWidth: 130,
                 sortable : true,
-                dataIndex: 'dob'
-            },{
-                text     : 'Jantina',
-                lockable: false,
-                width    : 100,
+                locked   : false,
+                dataIndex: 'citizen'
+            },
+            {
+                text     : 'No Telefon (Bimbit)',
+                flex: 1,
+                minWidth: 130,
                 sortable : true,
-                dataIndex: 'gender'
+                locked   : false,
+                dataIndex: 'mobile_no'
             },{
-                text     : 'Bangsa',
-                lockable: false,
-                width    : 100,
+                text     : 'No Telefon (Rumah)',
+                flex: 1,
+                minWidth: 130,
                 sortable : true,
-                dataIndex: 'bangsa'
+                locked   : false,
+                dataIndex: 'home_no'
             },{
                 text     : 'Agama',
-                lockable: false,
-                width    : 100,
+                flex: 1,
+                minWidth: 130,
                 sortable : true,
+                locked   : false,
                 dataIndex: 'agama'
+            },{
+                text     : 'Bangsa',
+                flex: 1,
+                minWidth: 130,
+                sortable : true,
+                locked   : false,
+                dataIndex: 'bangsa'
             }],
+            bbar: Ext.create('Ext.PagingToolbar', {
+                store: store,
+                displayInfo: true,
+                dock: 'bottom',
+                //displayMsg: 'Displaying topics {0} - {1} of {2}',
+                //emptyMsg: "No topics to display",
 
+            })
 
+        
+    });
         this.callParent();
-    }
 
-
+},
 
 });

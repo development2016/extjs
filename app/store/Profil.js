@@ -6,27 +6,31 @@ Ext.define('Kds.store.Profil', {
     fields: [
         'name', 
         'ic_no',
-        'dob',
         'address',
         'postcode',
         'gender',
-        'bangsa',
-        'agama',
         'state',
         'district',
-        'kampung'
+        'kampung',
+        'mobile_no',
+        'home_no',
+        'citizen',
+        'agama',
+        'bangsa',
+
 
     ],
 
-
+    pageSize : 20,
     proxy: {
-        type: 'ajax',
-
+        type: 'rest',
         url : 'http://localhost/kds-rest/web/index.php/people',
         useDefaultXhrHeader : false,
         withCredentials: false,
         reader: {
-            //type: 'json',
+            type: 'json',
+            rootProperty: 'data',
+            totalProperty: 'totalItems'
 
         }
     },

@@ -159,6 +159,10 @@ Ext.define('Kds.controller.Global', {
                 contentPanel.add({
                     xtype : 'profil'
                 });
+            } else if (node.get('id') == 'sukarelawan') {
+                contentPanel.add({
+                    xtype : 'sukarelawan'
+                });
             };
 
 

@@ -20,6 +20,11 @@ Ext.define('Kds.view.Header', {
             id: 'app-header-title',
             html: this.title,
             flex: 1,
+        },{
+            xtype: 'button',
+            text: 'Logout',
+            handler: 'onClickButton',
+            margin: '0 10 0 0'
         }];
 
 

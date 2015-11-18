@@ -7,6 +7,7 @@ Ext.define('Kds.view.main.Main', {
         'Kds.view.main.MainController',
         'Kds.view.main.MainModel',
     ],
+    xtype: 'app-main',
 
     controller: 'main',
     viewModel: 'main',

@@ -6991,7 +6991,7 @@ div.x-border-layout-ct {
 }
 /* http://localhost:1841/classic/sass/src/view/ContentPanel.scss:5 */
 #content-panel-innerCt {
-    padding: 20px;
+    padding-top: 20px;
 }
 /* http://localhost:1841/classic/sass/src/view/Header.scss:19 */
 #app-header {
@@ -9009,4 +9009,8 @@ div.x-border-layout-ct {
 .x-panel-header-title-navigation > .x-title-text-navigation:after {
     top: 30px;
     right: -24px;
+}
+/* http://localhost:1841/classic/sass/src/view/main/Main.scss:85 */
+.x-tree-node-text {
+    padding-left: 0px;
 }
