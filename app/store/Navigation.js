@@ -39,6 +39,7 @@ Ext.define('Kds.store.Navigation', {
 
     getNavItems: function() {
         return this.addIconClasses([
+
             {
                 text: 'Kawasan Perlaksanaan',
                 id: 'kawasan-perlaksanaan',

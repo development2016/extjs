@@ -6993,6 +6993,20 @@ div.x-border-layout-ct {
 #content-panel-innerCt {
     padding-top: 20px;
 }
+/* http://localhost:1841/classic/sass/src/view/ContentPanel.scss:11 */
+.x-action-col-icon {
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+}
+/* http://localhost:1841/classic/sass/src/view/ContentPanel.scss:18 */
+.ks-profile-switcher {
+    margin: 0 15px;
+    cursor: pointer;
+    background-image: url(images/options.png);
+    width: 22px;
+    height: 22px;
+}
 /* http://localhost:1841/classic/sass/src/view/Header.scss:19 */
 #app-header {
     background-color: #28384a;

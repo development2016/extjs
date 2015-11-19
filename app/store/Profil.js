@@ -4,11 +4,14 @@ Ext.define('Kds.store.Profil', {
     alias: 'store.profil',
 
     fields: [
+        'id',
         'name', 
         'ic_no',
         'address',
         'postcode',
         'gender',
+        'dob',
+        'birth_place',
         'state',
         'district',
         'kampung',
@@ -17,6 +20,13 @@ Ext.define('Kds.store.Profil', {
         'citizen',
         'agama',
         'bangsa',
+        'status_perkahwinan',
+        'no_of_children',
+        'profession_status',
+        'profession',
+        'income',
+        'spending',
+        'email',
 
 
     ],

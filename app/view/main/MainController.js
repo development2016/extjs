@@ -190,6 +190,9 @@ Ext.define('Kds.view.main.MainController', {
         Ext.create({
             xtype: 'login'
         });
-    }
+    },
+
+
+
 
 });

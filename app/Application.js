@@ -56,7 +56,8 @@ Ext.define('Kds.Application', {
         });
 
         // Set the default route to start the application.
-        //this.setDefaultToken('all');
+        
+        this.setDefaultToken('all');
 
         //Ext.setGlyphFontFamily('Pictos');
         //Ext.tip.QuickTipManager.init();

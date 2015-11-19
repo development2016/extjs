@@ -85,12 +85,6 @@ Ext.define('Kds.controller.Global', {
 
         Ext.suspendLayouts();
 
-        var x = new Ext.Panel({
-            autoHeight: true,
-            height: '100%',
-            width: '100%',
-            title : 'xxx'
-        });
 
         if (node.isLeaf()) {
             if (thumbnails.ownerCt) {
@@ -148,10 +142,15 @@ Ext.define('Kds.controller.Global', {
 
             // here code to call panel using if else ,call by xtype
             contentPanel.body.removeCls('kds-example');
-            if (node.get('id') == 'kawasan-perlaksanaan') {
+
+            if (node.get('id') == 'all') {
+                contentPanel.add({
+                    xtype : 'launch'
+                });
+            } else if (node.get('id') == 'kawasan-perlaksanaan') {
 
                 contentPanel.add({
-                    xtype : 'framed-panels'
+                    xtype : 'form-test'
                 });
 
             } else if (node.get('id') == 'profil-komuniti') {
