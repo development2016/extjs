@@ -150,7 +150,7 @@ Ext.define('Kds.controller.Global', {
             } else if (node.get('id') == 'kawasan-perlaksanaan') {
 
                 contentPanel.add({
-                    xtype : 'form-test'
+                    xtype : 'framed-panels'
                 });
 
             } else if (node.get('id') == 'profil-komuniti') {

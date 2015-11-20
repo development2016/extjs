@@ -115,36 +115,74 @@ var store = Ext.create('Kds.store.Profil');
                 items: [{
                                 icon: 'images/view.png',  // Use a URL in the icon config
                                 tooltip: 'Lihat',
-                                //handler: 'onAlertClick'
                                 handler : function(grid, rowIndex, colIndex) {
                                     var rec = grid.getStore().getAt(rowIndex);
-                                    alert("Lihat -  " + rec.get('id'));
-                                    /*var win = Ext.create("Ext.Window",{                   
-                                                    title : rec.get('name'),
+                                    var id = rec.get('id');
+
+                                    
+                                    Ext.Ajax.request({
+                                             url:'http://localhost/kds-rest/web/index.php/people/view/'+id, 
+                                             useDefaultXhrHeader : false,
+                                             withCredentials: false,
+                                             method: 'GET',    
+                                             success : function(response){
+                                                var urls = response.request.options.url
+                                                var userStore = Ext.create('Ext.data.Store', {
+                                                        fields: ['id', 'name'],
+                                                        proxy: {
+                                                            type: 'rest',
+                                                            url : urls,
+                                                            useDefaultXhrHeader : false,
+                                                            withCredentials: false,
+                                                            reader: {
+                                                                type: 'json',
+                                                                rootProperty: 'data',
+                                      
+                                                            }
+                                                    },
+                                                    autoLoad: 'true',
+
+                                                });
+                                                var grid = Ext.create('Ext.grid.Panel', {
+                                                    store: userStore,
+                                                    forceFit: true,
+                                                    columns: [
+                                                        {
+                                                            text: 'Name',
+                                                            width: 100,
+                                                            sortable: false,
+                                                            hideable: false,
+                                                            dataIndex: 'name'
+                                                        },
+                                                        
+                                                    ]
+                                                }); 
+
+
+                                                var win = Ext.create("Ext.Window",{                   
                                                     width: 1000,
                                                     draggable : false,
+                                                    title : rec.get('name'),
                                                     height: 600,
                                                     closable : true,
                                                     modal: true,
+                                                    items : [grid]
 
                                                 });
-                                                win.add({
-                                                    xtype : 'form-test'
-                                                });
-                                                win.show();*/
-                                }
-                                /*handler: function(grid, rowIndex, colIndex) {
-                                    var rec = grid.getStore().getAt(rowIndex);
-                                    alert("Lihat -  " + rec.get('name'));
-                                }*/
+                                                   
+                                                    win.show();
+                                             },    
+                                             scope:this
+                                        });
+     
+                                },
+
                             }]
             }],
             bbar: Ext.create('Ext.PagingToolbar', {
                 store: store,
                 displayInfo: true,
                 dock: 'bottom',
-                //displayMsg: 'Displaying topics {0} - {1} of {2}',
-                //emptyMsg: "No topics to display",
 
             })
 

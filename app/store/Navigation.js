@@ -39,7 +39,16 @@ Ext.define('Kds.store.Navigation', {
 
     getNavItems: function() {
         return this.addIconClasses([
+            {
+                text: 'Dash',
+                id: 'launch',
+                expanded: true,
+                description: 'Panels are the basic container that makes up the structure ' +
+                    'of most applications. Panels have a header and body, and can be arranged ' +
+                    'in various ways using layouts. These examples provide a few common use cases of Ext JS Panels.',
 
+
+            },
             {
                 text: 'Kawasan Perlaksanaan',
                 id: 'kawasan-perlaksanaan',
